@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Father's Day</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #0b0b0c, #1f1f2e);
+      color: #00ffff;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ffd700;
+      text-shadow: 2px 2px 10px #ff0000;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #00ffff;
+      text-shadow: 2px 2px 5px #0066cc;
+      margin-bottom: 30px;
+    }
+
+    .letter {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border: 2px solid #00ffff;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #00ffff;
+      font-size: 1.2em;
+      line-height: 1.6em;
+      white-space: pre-wrap;
+    }
+
+    .autobot-logo {
+      width: 120px;
+      margin: 20px auto;
+      display: block;
+      filter: drop-shadow(0 0 8px #ff0000);
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #00ffff; }
+      50% { text-shadow: 0 0 20px #00ffff; }
+      100% { text-shadow: 0 0 5px #00ffff; }
+    }
+
+    .animated {
+      animation: glow 2s infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://pngimg.com/uploads/transformers/transformers_PNG15.png" alt="Autobot Logo" class="autobot-logo">
+    <h1 class="animated">Happy Father's Day</h1>
+    <h2 class="animated">To Our Real-Life Hero</h2>
+    <div class="letter" id="letterText"></div>
+  </div>
+
+  <script>
+    const text = `Dear Dad,
+
+You're strong, wise, and always there. 
+You’ve been our guide, our shield, and our hero.
+
+Thank you for everything.
+Happy Father’s Day!`;
+
+    let i = 0;
+    const speed = 30;
+    const container = document.getElementById('letterText');
+
+    function typeWriter() {
+      if (i < text.length) {
+        container.innerHTML += text.charAt(i++);
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
